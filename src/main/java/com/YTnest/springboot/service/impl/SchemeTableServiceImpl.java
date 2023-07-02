@@ -49,12 +49,4 @@ public class SchemeTableServiceImpl implements SchemeTableService {
         schemeTableRepository.save(existingSchemeTable);
         return existingSchemeTable;
     }
-
-    @Override
-    public void deleteSchemeTable(long id) {
-        schemeTableRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("SchemeTable", "Id", id));
-
-        schemeTableRepository.deleteById(id);
-    }
-
 }

@@ -47,10 +47,4 @@ public class RecordServiceImpl implements RecordService {
         recordRepository.save(existingRecord);
         return existingRecord;
     }
-
-    @Override
-    public void deleteRecord(long id) {
-        recordRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Record", "Id", id));
-        recordRepository.deleteById(id);
-    }
 }

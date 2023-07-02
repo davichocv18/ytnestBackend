@@ -34,30 +34,4 @@ public class TablesLogServiceImpl implements TablesLogService {
     public TablesLog getTablesLogById(long id) {
         return tablesLogRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("TablesLog", "Id", id));
     }
-
-    @Override
-    public TablesLog updateTablesLog(TablesLog tablesLog, long id) {
-        TablesLog existingTablesLog= tablesLogRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("TablesLog", "Id", id));
-
-        
-        existingTablesLog.setLogDate(tablesLog.getLogDate());
-        existingTablesLog.setLogUser(tablesLog.getLogUser());
-        existingTablesLog.setLogTerminal(tablesLog.getLogTerminal());
-        existingTablesLog.setLogObservations(tablesLog.getLogObservations());
-        existingTablesLog.setLogProcedureName(tablesLog.getLogProcedureName());
-        existingTablesLog.setTableId(tablesLog.getTableId());
-        
-
-        tablesLogRepository.save(existingTablesLog);
-        return existingTablesLog;
-    }
-
-    @Override
-    public void deleteTablesLog(long id) {
-        tablesLogRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("TablesLog", "Id", id));
-
-        tablesLogRepository.deleteById(id);
-    }
-
 }

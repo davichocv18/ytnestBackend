@@ -9,5 +9,4 @@ public interface PenaltyService {
     List<Penalty> getAllPenaltys();
     Penalty getPenaltyById(long id);
     Penalty updatePenalty(Penalty penalty, long id);
-    void deletePenalty(long id);
 }

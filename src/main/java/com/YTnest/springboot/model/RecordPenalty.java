@@ -1,5 +1,7 @@
 package com.YTnest.springboot.model;
 
+import java.security.Timestamp;
+
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -23,6 +25,13 @@ public class RecordPenalty {
     private String status;
 
     @Column(name = "penalty_date")
-    private long penaltyDate;
+    private Timestamp penaltyDate;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="record_id") 
+    private Record record;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "penalty_id")
+    private Penalty penalty;
 }

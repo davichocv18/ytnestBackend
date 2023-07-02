@@ -9,5 +9,4 @@ public interface RecordPenaltyService {
     List<RecordPenalty> getAllRecordPenaltys();
     RecordPenalty getRecordPenaltyById(long id);
     RecordPenalty updateRecordPenalty(RecordPenalty recordPenalty, long id);
-    void deleteRecordPenalty(long id);
 }

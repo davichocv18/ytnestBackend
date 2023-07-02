@@ -50,12 +50,4 @@ public class PenaltyServiceImpl implements PenaltyService {
         penaltyRepository.save(existingPenalty);
         return existingPenalty;
     }
-
-    @Override
-    public void deletePenalty(long id) {
-        penaltyRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Penalty", "Id", id));
-
-        penaltyRepository.deleteById(id);
-    }
-
 }

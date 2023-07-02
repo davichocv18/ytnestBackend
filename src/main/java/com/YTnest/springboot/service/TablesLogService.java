@@ -8,6 +8,4 @@ public interface TablesLogService {
     TablesLog saveTablesLog(TablesLog tablesLog);
     List<TablesLog> getAllTablesLogs();
     TablesLog getTablesLogById(long id);
-    TablesLog updateTablesLog(TablesLog tablesLog, long id);
-    void deleteTablesLog(long id);
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,12 +49,6 @@ public class RecordController {
             @RequestBody Record record) {
         return new ResponseEntity<Record>(recordService.updateRecord(record, id),
                 HttpStatus.OK);
-    }
-
-    @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteRecord(@PathVariable("id") long id) {
-        recordService.deleteRecord(id);
-        return new ResponseEntity<String>("Record deleted successfully.", HttpStatus.OK);
     }
 
 }

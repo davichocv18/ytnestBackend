@@ -1,5 +1,9 @@
 package com.YTnest.springboot.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -19,4 +23,9 @@ public class Record {
     @Column(name = "status")
     private String status;
 
+    @OneToMany(mappedBy = "record", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RecordPenalty> recordPenaltys = new ArrayList<>();
+
+    @OneToOne(mappedBy = "record")
+    private Student student;
 }

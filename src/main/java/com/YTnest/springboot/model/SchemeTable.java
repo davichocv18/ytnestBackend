@@ -1,5 +1,8 @@
 package com.YTnest.springboot.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -22,5 +25,7 @@ public class SchemeTable {
     @Column(name = "status")
     private String status;
 
+    @OneToMany(mappedBy = "schemeTable")
+    private List<TablesLog> tablesLogs = new ArrayList<>();
 
 }

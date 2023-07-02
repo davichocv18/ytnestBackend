@@ -1,5 +1,8 @@
 package com.YTnest.springboot.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -24,5 +27,8 @@ public class Penalty {
 
     @Column(name = "status")
     private String status;
+
+    @OneToMany(mappedBy = "penalty")
+    private List<RecordPenalty> recordPenalties = new ArrayList<>();
 
 }

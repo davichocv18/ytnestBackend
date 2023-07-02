@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,11 +51,4 @@ public class SchemeTableController {
         return new ResponseEntity<SchemeTable>(schemeTableService.updateSchemeTable(schemeTable, id),
                 HttpStatus.OK);
     }
-
-    @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteSchemeTable(@PathVariable("id") long id) {
-        schemeTableService.deleteSchemeTable(id);
-        return new ResponseEntity<String>("Scheme Table deleted successfully.", HttpStatus.OK);
-    }
-
 }

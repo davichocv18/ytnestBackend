@@ -1,5 +1,7 @@
 package com.YTnest.springboot.model;
 
+import java.security.Timestamp;
+
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -14,7 +16,7 @@ public class TablesLog {
     private long log_id;
 
     @Column(name = "log_date")
-    private long logDate;
+    private Timestamp logDate;
     
     @Column(name = "log_user")
     private String logUser;
@@ -30,5 +32,9 @@ public class TablesLog {
 
     @Column(name = "table_id")
     private int tableId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "table_id")
+    private SchemeTable schemeTable;
 
 }

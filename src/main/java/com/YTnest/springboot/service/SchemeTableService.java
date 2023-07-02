@@ -9,5 +9,4 @@ public interface SchemeTableService {
     List<SchemeTable> getAllSchemeTables();
     SchemeTable getSchemeTableById(long id);
     SchemeTable updateSchemeTable(SchemeTable schemeTable, long id);
-    void deleteSchemeTable(long id);
 }

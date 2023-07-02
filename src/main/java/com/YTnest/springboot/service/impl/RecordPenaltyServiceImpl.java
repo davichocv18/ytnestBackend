@@ -49,10 +49,4 @@ public class RecordPenaltyServiceImpl implements RecordPenaltyService {
         recordPenaltyRepository.save(existingRecordPenalty);
         return existingRecordPenalty;
     }
-
-    @Override
-    public void deleteRecordPenalty(long id) {
-        recordPenaltyRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("RecordPenalty", "Id", id));
-        recordPenaltyRepository.deleteById(id);
-    }
 }

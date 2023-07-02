@@ -9,5 +9,4 @@ public interface RecordService {
     List<Record> getAllRecords();
     Record getRecordById(long id);
     Record updateRecord(Record record, long id);
-    void deleteRecord(long id);
 }
